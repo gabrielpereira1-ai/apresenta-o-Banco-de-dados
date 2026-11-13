@@ -1,0 +1,337 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cadastro de Candidatos | Apresentação</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #edf3ef;
+    color: #173c2e;
+}
+
+.apresentacao {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+}
+
+.slide {
+    display: none;
+    background: white;
+    width: 100%;
+    max-width: 1100px;
+    min-height: 650px;
+    padding: 55px;
+    border-radius: 20px;
+    box-shadow: 0 10px 35px #0002;
+    animation: aparecer .4s;
+}
+
+.slide.ativo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+    color: #07583d;
+    font-size: 38px;
+    margin-bottom: 25px;
+}
+
+h2 {
+    color: #08734e;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 21px;
+    line-height: 1.7;
+    color: #43534a;
+    margin-bottom: 18px;
+}
+
+.destaque {
+    background: #e7f4ec;
+    padding: 20px;
+    border-left: 5px solid #08734e;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.imagem {
+    width: 100%;
+    max-height: 390px;
+    object-fit: contain;
+    margin: 15px auto;
+    display: block;
+}
+
+.capa {
+    text-align: center;
+}
+
+.capa h1 {
+    font-size: 52px;
+}
+
+.capa p {
+    font-size: 24px;
+}
+
+.controles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+button {
+    background: #07583d;
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0b8058;
+}
+
+button:disabled {
+    opacity: .4;
+    cursor: not-allowed;
+}
+
+#contador {
+    font-weight: bold;
+    color: #07583d;
+}
+
+.progresso {
+    height: 6px;
+    background: #cbded1;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#barra {
+    height: 100%;
+    width: 10%;
+    background: #078451;
+    transition: .3s;
+}
+
+@media(max-width: 650px) {
+    .slide {
+        padding: 28px 22px;
+        min-height: 620px;
+    }
+
+    h1 {
+        font-size: 29px;
+    }
+
+    p {
+        font-size: 17px;
+    }
+
+    .capa h1 {
+        font-size: 36px;
+    }
+
+    .imagem {
+        max-height: 300px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="progresso">
+    <div id="barra"></div>
+</div>
+
+<main class="apresentacao">
+
+<section class="slide ativo capa">
+    <h1>Módulo de Cadastro de Candidatos</h1>
+    <p>Apresentação do desenvolvimento do sistema</p>
+    <div class="destaque">
+        <h2>Modelagem e desenvolvimento</h2>
+        <p>Protótipo, modelos e diagramas do projeto.</p>
+    </div>
+</section>
+
+<section class="slide">
+    <h1>1. Objetivo do Projeto</h1>
+    <p>
+        O objetivo é desenvolver um módulo que permita ao
+        administrador cadastrar candidatos, registrando
+        informações importantes.
+    </p>
+    <div class="destaque">
+        <p><b>Informações:</b></p>
+        <p>Nome do pet, raça, descrição, gênero e foto.</p>
+    </div>
+</section>
+
+<section class="slide">
+    <h1>2. Protótipo da Tela</h1>
+    <p>
+        Aqui temos uma representação visual da interface
+        utilizada pelo administrador.
+    </p>
+    <img class="imagem" src="imagens/prototipo.png" alt="Protótipo da tela">
+    <p>
+        Exemplo: cadastrar um cachorro chamado Thor,
+        informando sua raça, descrição, gênero e fotografia.
+    </p>
+</section>
+
+<section class="slide">
+    <h1>3. Modelo de Domínio</h1>
+    <img class="imagem" src="imagens/modelo-dominio.png" alt="Modelo de domínio">
+    <p>
+        O modelo identifica a entidade principal do sistema:
+        candidato, com seus atributos e características.
+    </p>
+</section>
+
+<section class="slide">
+    <h1>4. Modelo de Dados</h1>
+    <img class="imagem" src="imagens/modelo-dados.png" alt="Modelo de dados">
+    <p>
+        A tabela candidato organiza as informações.
+        O idCandidato é a chave primária e identifica
+        cada registro de maneira única.
+    </p>
+</section>
+
+<section class="slide">
+    <h1>5. Diagrama de Robustez</h1>
+    <img class="imagem" src="imagens/diagrama-robustez.png" alt="Diagrama de robustez">
+    <p>
+        Demonstra os participantes do cadastro:
+        Administrador, TelaCadCandidatos,
+        ControllerCandidato e candidato.
+    </p>
+</section>
+
+<section class="slide">
+    <h1>6. Diagrama de Classes</h1>
+    <img class="imagem" src="imagens/diagrama-classes.png" alt="Diagrama de classes">
+    <p>
+        Apresenta a estrutura do sistema, suas classes,
+        atributos e relacionamentos.
+    </p>
+</section>
+
+<section class="slide">
+    <h1>7. Diagrama de Sequência</h1>
+    <img class="imagem" src="imagens/diagrama-sequencia.png" alt="Diagrama de sequência">
+    <p>
+        Demonstra a ordem das operações: preenchimento,
+        envio dos dados, validação, armazenamento
+        e confirmação do cadastro.
+    </p>
+</section>
+
+<section class="slide">
+    <h1>8. Exemplo Prático</h1>
+    <h2>Cadastro do Thor</h2>
+    <div class="destaque">
+        <p>1. O administrador preenche os campos.</p>
+        <p>2. O controlador verifica as informações.</p>
+        <p>3. O sistema salva os dados.</p>
+        <p>4. O banco confirma o cadastro.</p>
+        <p>5. A tela apresenta uma mensagem de sucesso.</p>
+    </div>
+    <p>
+        Caso algum campo obrigatório esteja vazio,
+        o sistema deverá informar o erro.
+    </p>
+</section>
+
+<section class="slide capa">
+    <h1>Obrigado!</h1>
+    <p>
+        Cada modelo e diagrama contribui para
+        compreender a estrutura e o funcionamento
+        do nosso Módulo de Cadastro de Candidatos.
+    </p>
+    <div class="destaque">
+        <h2>Fim da apresentação</h2>
+    </div>
+</section>
+
+</main>
+
+<div class="controles">
+    <button id="anterior" onclick="mudar(-1)">← Anterior</button>
+    <span id="contador">1 / 10</span>
+    <button id="proximo" onclick="mudar(1)">Próximo →</button>
+    <button onclick="window.print()">Imprimir</button>
+</div>
+
+<script>
+let atual = 0;
+
+const slides = document.querySelectorAll(".slide");
+const total = slides.length;
+
+function mostrar() {
+    slides.forEach((slide, i) => {
+        slide.classList.toggle("ativo", i === atual);
+    });
+
+    document.getElementById("contador").textContent =
+        `${atual + 1} / ${total}`;
+
+    document.getElementById("anterior").disabled = atual === 0;
+    document.getElementById("proximo").disabled = atual === total - 1;
+
+    document.getElementById("barra").style.width =
+        ((atual + 1) / total * 100) + "%";
+}
+
+function mudar(direcao) {
+    atual = Math.max(0, Math.min(total - 1, atual + direcao));
+    mostrar();
+}
+
+document.addEventListener("keydown", function(e) {
+    if (e.key === "ArrowRight") mudar(1);
+    if (e.key === "ArrowLeft") mudar(-1);
+});
+
+mostrar();
+</script>
+
+</body>
+</html>
