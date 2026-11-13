@@ -168,6 +168,17 @@ button:disabled {
         max-height: 300px;
     }
 }
+
+@media print {
+    body { background: white; }
+    .slide {
+        display: flex !important;
+        min-height: 100vh;
+        page-break-after: always;
+        box-shadow: none;
+    }
+    .controles { display: none; }
+}
 </style>
 </head>
 
@@ -196,7 +207,7 @@ button:disabled {
         informações importantes.
     </p>
     <div class="destaque">
-        <p><b>Informações:</b></p>
+        <h2>Informações do cadastro</h2>
         <p>Nome do pet, raça, descrição, gênero e foto.</p>
     </div>
 </section>
@@ -207,7 +218,7 @@ button:disabled {
         Aqui temos uma representação visual da interface
         utilizada pelo administrador.
     </p>
-    <img class="imagem" src="imagens/prototipo.png" alt="Protótipo da tela">
+    <img class="imagem" src="prototipo.png" alt="Protótipo da tela">
     <p>
         Exemplo: cadastrar um cachorro chamado Thor,
         informando sua raça, descrição, gênero e fotografia.
@@ -216,7 +227,7 @@ button:disabled {
 
 <section class="slide">
     <h1>3. Modelo de Domínio</h1>
-    <img class="imagem" src="imagens/modelo-dominio.png" alt="Modelo de domínio">
+    <img class="imagem" src="modelo-dominio.png" alt="Modelo de domínio">
     <p>
         O modelo identifica a entidade principal do sistema:
         candidato, com seus atributos e características.
@@ -225,7 +236,7 @@ button:disabled {
 
 <section class="slide">
     <h1>4. Modelo de Dados</h1>
-    <img class="imagem" src="imagens/modelo-dados.png" alt="Modelo de dados">
+    <img class="imagem" src="modelo-dados.png" alt="Modelo de dados">
     <p>
         A tabela candidato organiza as informações.
         O idCandidato é a chave primária e identifica
@@ -235,7 +246,7 @@ button:disabled {
 
 <section class="slide">
     <h1>5. Diagrama de Robustez</h1>
-    <img class="imagem" src="imagens/diagrama-robustez.png" alt="Diagrama de robustez">
+    <img class="imagem" src="diagrama-robustez.png" alt="Diagrama de robustez">
     <p>
         Demonstra os participantes do cadastro:
         Administrador, TelaCadCandidatos,
@@ -245,7 +256,7 @@ button:disabled {
 
 <section class="slide">
     <h1>6. Diagrama de Classes</h1>
-    <img class="imagem" src="imagens/diagrama-classes.png" alt="Diagrama de classes">
+    <img class="imagem" src="diagrama-classes.png" alt="Diagrama de classes">
     <p>
         Apresenta a estrutura do sistema, suas classes,
         atributos e relacionamentos.
@@ -254,7 +265,7 @@ button:disabled {
 
 <section class="slide">
     <h1>7. Diagrama de Sequência</h1>
-    <img class="imagem" src="imagens/diagrama-sequencia.png" alt="Diagrama de sequência">
+    <img class="imagem" src="diagrama-sequencia.png" alt="Diagrama de sequência">
     <p>
         Demonstra a ordem das operações: preenchimento,
         envio dos dados, validação, armazenamento
@@ -281,9 +292,9 @@ button:disabled {
 <section class="slide capa">
     <h1>Obrigado!</h1>
     <p>
-        Cada modelo e diagrama contribui para
-        compreender a estrutura e o funcionamento
-        do nosso Módulo de Cadastro de Candidatos.
+        Cada modelo e diagrama contribui para compreender
+        a estrutura e o funcionamento do nosso
+        Módulo de Cadastro de Candidatos.
     </p>
     <div class="destaque">
         <h2>Fim da apresentação</h2>
@@ -335,3 +346,4 @@ mostrar();
 
 </body>
 </html>
+
